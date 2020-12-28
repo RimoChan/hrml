@@ -53,6 +53,12 @@ with open('xxx.hrml') as f:
     print(hrml.masturbate(f.read()))
 ```
 
+接口只有`masturbate`这一个，输入一个hrml的字符串，将它转为html。
+
+```python
+def masturbate(s: str):
+    ...
+```
 
 ## 语法
 
