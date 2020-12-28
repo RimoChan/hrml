@@ -22,7 +22,7 @@ html:
 <div id='all'>
     <div class='my_class1'>
         <span>
-            今天天气不错，来自慰吧。
+            今天天气不错，来散步自慰吧。
         </span>
         <a href='https://散步自慰'>
             go!
