@@ -27,8 +27,12 @@ from hrml import 編譯工具
 
 
 def 檢查(x):
-    if (x['類型'] != 'html元素' or x['自閉']) and '子' in x:
-        raise Exception('壞了')
+    if '子' in x:
+        if x['類型'] != 'html元素':
+            raise Exception(f'{x.__repr__()}\n「{x["類型"]}」不能有子元素。')
+        elif x['自閉']:
+            print(x)
+            raise Exception(f'{x.__repr__()}自閉元素不能有子元素。')
 
 
 def 打印(x):
@@ -65,6 +69,7 @@ def 打印(x):
 
 
 def 樹轉換(t):
+    t = (x.rstrip() for x in t)
     編譯結果 = 編譯工具.生編譯(t, 正則組)
     html = ''.join(map(打印, 編譯結果))
     return html
